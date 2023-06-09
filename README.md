@@ -15,7 +15,7 @@ when the last digit of the sequence disappear.
 In this implementation, each digit is shown for T milliseconf (T=1000 by default but can be changed). 
 The first sequence shows K (K=3 by default but can be changed) digits. If the participants gets it right, the next sequence is of K+1 digits. 
 If the participants gets it wrong, another sequence of length K is shown. The task ends and so the memory span is defined when the participant 
-makes three consecutive errors for a given sequence length or when the span is 9 (this also can be changed easely). 
+makes three consecutive errors for a given sequence length or when the span is 9 (this also can be changed easily). 
 
 The same task is duplicated asking the participant to type the digit sequence in reverse order.
 
