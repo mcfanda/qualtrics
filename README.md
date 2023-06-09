@@ -31,4 +31,3 @@ Use of the code is entirely at your own risk. The author(s) and contributors dis
 
 The code shared in this repository is provided under the CC BY-NC license. By using, distributing, or modifying the code, you agree to abide by the terms and conditions set forth in the license.
 
-Please note that this disclaimer may not cover all legal aspects and does not substitute for professional legal advice. If you have specific concerns or questions regarding liability, it is recommended to consult with a legal professional.
