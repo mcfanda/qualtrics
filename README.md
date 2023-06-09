@@ -23,7 +23,7 @@ In the data produced one finds the time needed to respond to each sequence (usua
 contains the resulting memory span of the participant.
 
 
-## Disclaimer of Liability:
+### Disclaimer of Liability:
 
 The code and any accompanying documentation provided in this repository are offered "as is" without warranty or liability of any kind. The author(s) and contributors to this repository disclaim any liability for damages, including but not limited to direct, indirect, incidental, special, exemplary, or consequential damages, arising from the use or misuse of the code or any information contained herein.
 
