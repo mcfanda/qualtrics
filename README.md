@@ -1,5 +1,5 @@
-# qualtrics
-Some qualtrics projects
+# Qualtrics
+## Some qualtrics small projects
 
 These are a few tests implemented in qualitrics. You just need to import the qsf file in your library and then include the survey in your project.
 The surveys are simple exemplification of what can be done in qualtrics, they are not meant to reflect the exact behavior of the original tests
