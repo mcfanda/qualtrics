@@ -1,0 +1,26 @@
+---
+title: "Digit Span"
+author: "Marcello Gallucci"
+date: "`r Sys.Date()`"
+nickname: digitspan
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Digit Span
+
+The digit span test shows a series of sequences of digits of increasing length. The participant should look at the digits sequence and type it in when the last digit of the sequence disappear.
+
+In this implementation, each digit is shown for T millisecond (T=1000 by default but can be changed). The first sequence shows K (K=3 by default but can be changed) digits. If the participants gets it right, the next sequence is of K+1 digits. If the participants gets it wrong, another sequence of length K is shown. The task ends and so the memory span is defined when the participant makes three consecutive errors for a given sequence length or when the span is 9 (this also can be changed easily).
+
+The same task is duplicated asking the participant to type the digit sequence in reverse order.
+
+In the data produced one finds the time needed to respond to each sequence (usually not important) and two variable, named `span` and `spanr` that contains the resulting memory span of the participant.
+
+The test is implemented with a minimum of javascript code. It does not require any JS library and does not depend on the format of the survey it is included.
+
+## Import in qualtrics
+

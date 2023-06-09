@@ -1,0 +1,40 @@
+---
+title: "Qualtrics Hacks"
+author: "Marcello Gallucci"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Qualtrics Hacks
+
+These are a few tests implemented in qualtrics. You just need to import the qsf file in your library and then include the survey in your project. The surveys are simple exemplifications of what can be done in qualtrics, they are not meant to reflect the exact behavior of the original tests or the scores one obtains with the code. For that, it is your responsibility to test that the code is valid and results reliable.
+
+I hope this code can give you a good start in implementing your own project.
+
+## Help for `r mcdocs::link_pages("digitspan")`
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="diclaimer">
+###  Disclaimer of Liability:
+
+The code and any accompanying documentation provided in this repository are offered "as is" without warranty or liability of any kind. The author(s) and contributors to this repository disclaim any liability for damages, including but not limited to direct, indirect, incidental, special, exemplary, or consequential damages, arising from the use or misuse of the code or any information contained herein.
+
+Use of the code is entirely at your own risk. The author(s) and contributors disclaim any responsibility for any harm or loss of data that may occur from using or modifying the code. It is your responsibility to review and test the code thoroughly before using it in any application.
+
+The code shared in this repository is provided under the CC BY-NC license. By using, distributing, or modifying the code, you agree to abide by the terms and conditions set forth in the license.
+About
+
+</div>
