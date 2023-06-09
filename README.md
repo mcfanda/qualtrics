@@ -3,7 +3,7 @@
 
 These are a few tests implemented in qualtrics. You just need to import the qsf file in your library and then include the survey in your project.
 The surveys are simple exemplifications of what can be done in qualtrics, they are not meant to reflect the exact behavior of the original tests
-or the scores one obtain with the code. For that, it is your responsability to test that the code is valid and results reliable.
+or the scores one obtains with the code. For that, it is your responsability to test that the code is valid and results reliable.
 
 I hope this code can give you a good start in implementing your own project.
 
