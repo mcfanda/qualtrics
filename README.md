@@ -22,6 +22,7 @@ The same task is duplicated asking the participant to type the digit sequence in
 In the data produced one finds the time needed to respond to each sequence (usually not important) and two variable, named `span` and `spanr` that
 contains the resulting memory span of the participant.
 
+The test is implemented with a minimum of javascript code. It does not require any JS library and does not depend on the format of the survey it is included.
 
 ### Disclaimer of Liability:
 
