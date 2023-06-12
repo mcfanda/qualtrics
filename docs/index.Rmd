@@ -17,6 +17,7 @@ I hope this code can give you a good start in implementing your own project.
 
 ## Help for `r mcdocs::link_pages("digitspan")`
 
+## Help for `r mcdocs::link_pages("stroop")`
 
 
 

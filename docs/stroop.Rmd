@@ -2,7 +2,7 @@
 title: "Stroop Task"
 author: "Marcello Gallucci"
 date: "`r Sys.Date()`"
-nickname: digitspan
+nickname: stroop
 output: html_document
 ---
 

@@ -26,6 +26,15 @@ contains the resulting memory span of the participant.
 
 The test is implemented with a minimum of javascript code. It does not require any JS library and does not depend on the format of the survey it is included.
 
+## Stroop task
+
+(More info in the [Stroop task help page](https://mcfanda.github.io/qualtrics/stroop.html)).
+
+vThe Stroop test shows a series of color names colored with different colors. The participant should name (select in a multiple choices answer) the color of the font in which the word is shown. The words are presented with a congruent color ("Red" shown in red) in half of the trials, and in an incongruent color ("Red" in green) in the other half. Colors are red, blue, yellow and green.
+
+In this implementation, 28 trials show congruent color-word trials and 28 incongruent ones. One can add or remove trials or duplicate the task for longer experiments.
+
+
 ### Disclaimer of Liability:
 
 The code and any accompanying documentation provided in this repository are offered "as is" without warranty or liability of any kind. The author(s) and contributors to this repository disclaim any liability for damages, including but not limited to direct, indirect, incidental, special, exemplary, or consequential damages, arising from the use or misuse of the code or any information contained herein.
