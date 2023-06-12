@@ -328,29 +328,30 @@ length 3 up to length 9. The displayed sequences are defined in the
 (second block).</p>
 <p><img src="pics/ds5.png" /><!-- --></p>
 <p><img src="pics/ds6.png" /><!-- --></p>
-<p>The loop and merge data displayed here shows 3 sequence of digits for
-each span: 265, 281, 739 for length 3, 1523, 1952 and 8735 for length 4,
-and so on. You can change the digits as you like.</p>
+<p>The loop and merge data displayed here shows 3 sequences of digits
+for each span: 265, 281, 739 for length 3, 1523, 1952 and 8735 for
+length 4, and so on. You can change the digits as you like.</p>
 </div>
 <div id="max-span" class="section level2">
 <h2>Max span</h2>
-<p>By default, the task shows digit sequence of length up to nine. If
-you want to be able to measure more than that, just add 3 length-10
+<p>By default, the task shows digit sequences of length up to 9. If you
+want to be able to measure more than that, just add 3 length-10
 sequences for span 10, 3 11-length sequences for span 11, and so
 forth.</p>
 </div>
 <div id="error-handling" class="section level2">
 <h2>Error handling</h2>
-<p>In the present implementation, the task shows a sequence of length N.
-If the participants gets it right, the task move to a sequence of length
-N+1. If the participants does not recall the sequence correctly, the
-task show another sequence of length N. If right, it moves to N+1 lenght
-sequences, otherwise it shows another sequence of length N. If the
-participant is wrong, the span is determined and it moves to the next
-block: the reverse order block. The latter has the same structure of the
-first block, but the task is to remember the sequences in reverse order.
-Thus, the participant has 3 chances to get it right.</p>
-<p>If you want to give the participant K chances, include in the
+<p>In the current implementation, the task presents participants with a
+sequence of length N, and if they recall it correctly, the task
+progresses to a sequence of length N+1. However, if participants do not
+recall the sequence correctly, another sequence of length N is shown. If
+participants are successful, the task advances to sequences of length
+N+1, but if they are unsuccessful, another sequence of length N is
+presented. When participants provide 3 incorrect responses, the span is
+determined, and the task moves on to the next block, which is the
+reverse order block. Overall, participants have three opportunities to
+recall the sequences correctly.</p>
+<p>If you want to give the participant K opportunities, include in the
 <code>Loop and Merge</code> K sequences for each span length. Then go to
 the <code>fixation</code> and <code>ds_compute</code> questions and set
 the display logit to <code>Less then K+1</code>. For 3 chances, set it
