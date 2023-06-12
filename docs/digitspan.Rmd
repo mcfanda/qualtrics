@@ -8,6 +8,8 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(mcdocs)
+mcdocs_init()
 ```
 
 # Digit Span
@@ -23,4 +25,68 @@ In the data produced one finds the time needed to respond to each sequence (usua
 The test is implemented with a minimum of javascript code. It does not require any JS library and does not depend on the format of the survey it is included.
 
 ## Import in qualtrics
+
+Download the `Digit_Span_Eng.qsf` and login to your qualtrics account. Create a new project and select the to import an QSF file.
+
+`r mcdocs::pic("pics/ds1.png")`
+
+Choose your file and hit `Create Project`.  If everything goes as planned, your are ready to go. 
+
+## Use it in an existing project
+
+It is likely that you want to import the test into an existing project, with other tests and questionnaires. Due to some limitations in qualtrics system, you cannot save the survey into the library and import it in another project. This operation would not work because if you save a survey in the library, loop and merge setup of the survery will be lost. 
+
+Thus, simply import the task using _Copy from Existing Survery_ function: Add a block, then 
+
+`r mcdocs::pic("pics/ds4.png")`
+ 
+ and then
+ 
+ `r mcdocs::pic("pics/ds3.png")`
+
+
+## Structure of the task
+
+The task shows digit sequences to be recalled in the diplayed order. When the span is determined, a second block of sequences is shown, to be remembered in reverse order.
+
+
+## Digits sequences
+
+
+By default, the program allows for digits sequences starting from length 3 up to length 9. The displayed sequences are shown  determined by the `loop and merge`, in the `Digit Span` block (second block). 
+
+`r pic("pics/ds5.png")`
+
+`r pic("pics/ds6.png")`
+
+The loop and merge data displayed here shows 3 sequence of digits for each span: 265, 281, 739 for length 3, 1523, 1952 and  8735 for length 4, and so on. You can change the digits as you like. 
+
+## Max span
+
+By default, the task shows digit sequence of length up to nine. If you want to be able to measure more than that, just add 3 length-10 sequences for span 10, 3 11-length sequences for span 11, and so forth.
+
+
+## Error handling
+
+In the present implementation, the task shows a sequence of length N. If the participants gets it right, the task move to a sequence of length N+1. If the participants does not recall the sequence correctly, the task show another sequence of length N. If right, it moves to N+1 lenght sequences, otherwise it shows another sequence of length N. If the participant is wrong, the span is determined and it moves to the next block: the reverse order block. The latter has the same structure of the first block, but the task is to remember the sequences in reverse order. Thus, the participant has 3 chances to get it right.
+
+If you want to give the participant K chances, include in the `Loop and Merge` K sequences for each span length. Then go to the `fixation` and `ds_compute` questions and set the display logit to `Less then K+1`. For 3 chances, set it to 4.
+
+`r pic("pics/ds7.png")`
+
+
+
+## Digit display time
+
+By default, each digit is shown on the screen for 1 second (1000 milliseconds). If you want to change the exposure time, go to the embedded data setup in the survey flow and set the `ds_screentime` variable to the milliseconds you prefer.
+
+`r pic("pics/ds8.png")`
+
+
+## Reverse order block
+
+The reverse order block has the same structure that the forward block. Sequences to be shown are set up in the merge and loop section of the block.
+
+
+
 

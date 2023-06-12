@@ -11,7 +11,7 @@
 
 <meta name="author" content="Marcello Gallucci" />
 
-<meta name="date" content="2023-06-09" />
+<meta name="date" content="2023-06-12" />
 
 <title>Digit Span</title>
 
@@ -264,7 +264,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Digit Span</h1>
 <h4 class="author">Marcello Gallucci</h4>
-<h4 class="date">2023-06-09</h4>
+<h4 class="date">2023-06-12</h4>
 
 </div>
 
@@ -293,6 +293,83 @@ not require any JS library and does not depend on the format of the
 survey it is included.</p>
 <div id="import-in-qualtrics" class="section level2">
 <h2>Import in qualtrics</h2>
+<p>Download the <code>Digit_Span_Eng.qsf</code> and login to your
+qualtrics account. Create a new project and select the to import an QSF
+file.</p>
+<p><img src="pics/ds1.png" /><!-- --></p>
+<p>Choose your file and hit <code>Create Project</code>. If everything
+goes as planned, your are ready to go.</p>
+</div>
+<div id="use-it-in-an-existing-project" class="section level2">
+<h2>Use it in an existing project</h2>
+<p>It is likely that you want to import the test into an existing
+project, with other tests and questionnaires. Due to some limitations in
+qualtrics system, you cannot save the survey into the library and import
+it in another project. This operation would not work because if you save
+a survey in the library, loop and merge setup of the survery will be
+lost.</p>
+<p>Thus, simply import the task using <em>Copy from Existing
+Survery</em> function: Add a block, then</p>
+<p><img src="pics/ds4.png" /><!-- --></p>
+<p>and then</p>
+<p><img src="pics/ds3.png" /><!-- --></p>
+</div>
+<div id="structure-of-the-task" class="section level2">
+<h2>Structure of the task</h2>
+<p>The task shows digit sequences to be recalled in the diplayed order.
+When the span is determined, a second block of sequences is shown, to be
+remembered in reverse order.</p>
+</div>
+<div id="digits-sequences" class="section level2">
+<h2>Digits sequences</h2>
+<p>By default, the program allows for digits sequences starting from
+length 3 up to length 9. The displayed sequences are shown determined by
+the <code>loop and merge</code>, in the <code>Digit Span</code> block
+(second block).</p>
+<p><img src="pics/ds5.png" /><!-- --></p>
+<p><img src="pics/ds6.png" /><!-- --></p>
+<p>The loop and merge data displayed here shows 3 sequence of digits for
+each span: 265, 281, 739 for length 3, 1523, 1952 and 8735 for length 4,
+and so on. You can change the digits as you like.</p>
+</div>
+<div id="max-span" class="section level2">
+<h2>Max span</h2>
+<p>By default, the task shows digit sequence of length up to nine. If
+you want to be able to measure more than that, just add 3 length-10
+sequences for span 10, 3 11-length sequences for span 11, and so
+forth.</p>
+</div>
+<div id="error-handling" class="section level2">
+<h2>Error handling</h2>
+<p>In the present implementation, the task shows a sequence of length N.
+If the participants gets it right, the task move to a sequence of length
+N+1. If the participants does not recall the sequence correctly, the
+task show another sequence of length N. If right, it moves to N+1 lenght
+sequences, otherwise it shows another sequence of length N. If the
+participant is wrong, the span is determined and it moves to the next
+block: the reverse order block. The latter has the same structure of the
+first block, but the task is to remember the sequences in reverse order.
+Thus, the participant has 3 chances to get it right.</p>
+<p>If you want to give the participant K chances, include in the
+<code>Loop and Merge</code> K sequences for each span length. Then go to
+the <code>fixation</code> and <code>ds_compute</code> questions and set
+the display logit to <code>Less then K+1</code>. For 3 chances, set it
+to 4.</p>
+<p><img src="pics/ds7.png" /><!-- --></p>
+</div>
+<div id="digit-display-time" class="section level2">
+<h2>Digit display time</h2>
+<p>By default, each digit is shown on the screen for 1 second (1000
+milliseconds). If you want to change the exposure time, go to the
+embedded data setup in the survey flow and set the
+<code>ds_screentime</code> variable to the milliseconds you prefer.</p>
+<p><img src="pics/ds8.png" /><!-- --></p>
+</div>
+<div id="reverse-order-block" class="section level2">
+<h2>Reverse order block</h2>
+<p>The reverse order block has the same structure that the forward
+block. Sequences to be shown are set up in the merge and loop section of
+the block.</p>
 </div>
 </div>
 
