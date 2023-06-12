@@ -30,7 +30,7 @@ The test is implemented with a minimum of javascript code. It does not require a
 
 (More info in the [Stroop task help page](https://mcfanda.github.io/qualtrics/stroop.html)).
 
-vThe Stroop test shows a series of color names colored with different colors. The participant should name (select in a multiple choices answer) the color of the font in which the word is shown. The words are presented with a congruent color ("Red" shown in red) in half of the trials, and in an incongruent color ("Red" in green) in the other half. Colors are red, blue, yellow and green.
+vThe Stroop test shows a series of color names colored with different colors. The participant should name (select in a multiple choices answer) the color of the font in which the word is shown. The words are presented with a congruent color ("Red" shown in red) in half of the trials, and in an incongruent color ("Red" in green, yellow or blue) in the other half. Colors are red, blue, yellow and green.
 
 In this implementation, 28 trials show congruent color-word trials and 28 incongruent ones. One can add or remove trials or duplicate the task for longer experiments.
 
