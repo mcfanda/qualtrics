@@ -9,6 +9,8 @@ I hope this code can give you a good start in implementing your own project.
 
 ## Digit Span
 
+(More info in the [Digit Span help page](https://mcfanda.github.io/qualtrics/digitspan.html)
+
 The digit span test shows a series of sequences of digits of increasing length. The participant should look at the digits sequence and type it in
 when the last digit of the sequence disappear. 
 
