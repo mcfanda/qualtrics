@@ -5,6 +5,8 @@ navbar:
   left:
   - text: "Digit Span"
     href:  digitspan.html
+  - text: "Stroop Task"
+    href:  stroop.html
 
   right: 
   - text: "View on Github"

@@ -13,7 +13,7 @@
 
 <meta name="date" content="2023-06-12" />
 
-<title>Digit Span</title>
+<title>Stroop Task</title>
 
 <script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -265,41 +265,34 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Digit Span</h1>
+<h1 class="title toc-ignore">Stroop Task</h1>
 <h4 class="author">Marcello Gallucci</h4>
 <h4 class="date">2023-06-12</h4>
 
 </div>
 
 
-<div id="digit-span" class="section level1">
-<h1>Digit Span</h1>
-<p>The digit span test shows a series of sequences of digits of
-increasing length. The participant should look at the digits sequence
-and type it in when the last digit of the sequence disappears.</p>
-<p>In this implementation, each digit is shown for T millisecond (T=1000
-by default but can be changed). The first sequence shows K (K=3 by
-default but it can be changed) digits. If the participants gets it
-right, the next sequence is of K+1 digits. If the participants gets it
-wrong, another sequence of length K is shown. The task ends and so the
-memory span is defined when the participant makes three consecutive
-errors for a given sequence length or when the span is 9 (this also can
-be changed easily).</p>
-<p>The same task is duplicated asking the participant to type the digit
-sequence in reverse order.</p>
-<p>In the data produced one finds the time needed to respond to each
-sequence (usually not important) and two variable, named
-<code>span</code> and <code>spanr</code> that contains the resulting
-memory span of the participant.</p>
+<div id="stroop-task" class="section level1">
+<h1>Stroop Task</h1>
+<p>The Stroop test shows a series of color names colored with different
+colors. The participant should name (select in a multiple choices
+answer) the color of the font in which the word is shown. The words are
+presented with a congruent color (“Red” shown in red) in half of the
+trials, and in an incongruent color (“Red” in green) in the other half.
+Colors are red, blue, yellow and green.</p>
+<p>In this implementation, 28 trials show congruent color-word trials
+and 28 incongruent ones. One can add or remove trials or duplicate the
+task for longer experiments.</p>
+<p>The order of presentation of the stimuli is randomized.</p>
 <p>The test is implemented with a minimum of javascript code. It does
 not require any JS library and does not depend on the format of the
 survey it is included.</p>
 <div id="import-in-qualtrics" class="section level2">
 <h2>Import in qualtrics</h2>
-<p>Download the <code>Digit_Span_Eng.qsf</code> and login to your
+<p>Download the <code>stroop_task_Eng.qsf</code> and login to your
 qualtrics account. Create a new project and select the to import an QSF
 file.</p>
-<p><img src="pics/ds1.png" /><!-- --></p>
+<p><img src="pics/stroop1.png" /><!-- --></p>
 <p>Choose your file and hit <code>Create Project</code>. If everything
 goes as planned, your are ready to go.</p>
 </div>
@@ -319,62 +312,37 @@ Survery</em> function: Add a block, then</p>
 </div>
 <div id="structure-of-the-task" class="section level2">
 <h2>Structure of the task</h2>
-<p>The task shows digit sequences to be recalled in the diplayed order.
-When the span is determined, a second block of sequences is shown, to be
-remembered in reverse order.</p>
+<p>At the moment the task implements a block of 56 words (color names),
+half congruent and half incongruent. The displayed words and their color
+are defined in the <code>loop and merge</code>, in the
+<code>stroop stimuli</code> block (second block).</p>
+<p><img src="pics/stroop2.png" /><!-- --></p>
+<p><img src="pics/stroop3.png" /><!-- --></p>
+<p><code>Field 2</code> stores the word to be shown, the
+<code>Field 3</code> in which color should the word be displayed.
+<code>Field 4</code> indicates whether the stimulus was shown in a
+congruent or incongruent color. The latter field is there to be saved in
+the dataset.</p>
 </div>
-<div id="digits-sequences" class="section level2">
-<h2>Digits sequences</h2>
-<p>By default, the program allows for digits sequences starting from
-length 3 up to length 9. The displayed sequences are defined in the
-<code>loop and merge</code>, in the <code>Digit Span</code> block
-(second block).</p>
-<p><img src="pics/ds5.png" /><!-- --></p>
-<p><img src="pics/ds6.png" /><!-- --></p>
-<p>The loop and merge data displayed here shows 3 sequences of digits
-for each span: 265, 281, 739 for length 3, 1523, 1952 and 8735 for
-length 4, and so on. You can change the digits as you like.</p>
+<div id="trials" class="section level2">
+<h2>Trials</h2>
+<p>The present implementation offers the minum set of trials. 4 colors,
+each shown 7 times in an incongruent color and 7 times with the
+congruent color. By adding rows to the <code>Loop and Mege</code> fields
+one can increase or decrease the trials shown. Trials are randomized</p>
+<p><img src="pics/stroop4.png" /><!-- --></p>
+<p>An easy way to increase the number of trials is to copy the whole
+block <code>stroop stimuli</code>.</p>
 </div>
-<div id="max-span" class="section level2">
-<h2>Max span</h2>
-<p>By default, the task shows digit sequences of length up to 9. If you
-want to be able to measure more than that, just add 3 length-10
-sequences for span 10, 3 11-length sequences for span 11, and so
-forth.</p>
 </div>
-<div id="error-handling" class="section level2">
-<h2>Error handling</h2>
-<p>In the current implementation, the task presents participants with a
-sequence of length N, and if they recall it correctly, the task
-progresses to a sequence of length N+1. However, if participants do not
-recall the sequence correctly, another sequence of length N is shown. If
-participants are successful, the task advances to sequences of length
-N+1, but if they are unsuccessful, another sequence of length N is
-presented. When participants provide 3 incorrect responses, the span is
-determined, and the task moves on to the next block, which is the
-reverse order block. Overall, participants have three opportunities to
-recall the sequences correctly.</p>
-<p>If you want to give the participant K opportunities, include in the
-<code>Loop and Merge</code> K sequences for each span length. Then go to
-the <code>fixation</code> and <code>ds_compute</code> questions and set
-the display logit to <code>Less then K+1</code>. For 3 chances, set it
-to 4.</p>
-<p><img src="pics/ds7.png" /><!-- --></p>
-</div>
-<div id="digit-display-time" class="section level2">
-<h2>Digit display time</h2>
-<p>By default, each digit is shown on the screen for 1 second (1000
-milliseconds). If you want to change the exposure time, go to the
-embedded data setup in the survey flow and set the
-<code>ds_screentime</code> variable to the milliseconds you prefer.</p>
-<p><img src="pics/ds8.png" /><!-- --></p>
-</div>
-<div id="reverse-order-block" class="section level2">
-<h2>Reverse order block</h2>
-<p>The reverse order block has the same structure that the forward
-block. Sequences to be shown are set up in the merge and loop section of
-the block.</p>
-</div>
+<div id="data" class="section level1">
+<h1>Data</h1>
+<p><img src="pics/stroop5.png" /><!-- --></p>
+<p>In the dataset, apart from other variable, the survey saves, for each
+word-color pair N, the diplayed word <code>N_stimulus</code>, the
+response time <code>N_time_First Click</code>, the color of the word
+<code>N_stroop_color</code> and whether the color-word as congruent or
+not <code>N_stroop_cong</code>. The other columns can be ignored.</p>
 </div>
 
 
