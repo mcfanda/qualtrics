@@ -14,9 +14,9 @@ mcdocs_init()
 
 # Digit Span
 
-The digit span test shows a series of sequences of digits of increasing length. The participant should look at the digits sequence and type it in when the last digit of the sequence disappear.
+The digit span test shows a series of sequences of digits of increasing length. The participant should look at the digits sequence and type it in when the last digit of the sequence disappears.
 
-In this implementation, each digit is shown for T millisecond (T=1000 by default but can be changed). The first sequence shows K (K=3 by default but can be changed) digits. If the participants gets it right, the next sequence is of K+1 digits. If the participants gets it wrong, another sequence of length K is shown. The task ends and so the memory span is defined when the participant makes three consecutive errors for a given sequence length or when the span is 9 (this also can be changed easily).
+In this implementation, each digit is shown for T millisecond (T=1000 by default but can be changed). The first sequence shows K (K=3 by default but it can be changed) digits. If the participants gets it right, the next sequence is of K+1 digits. If the participants gets it wrong, another sequence of length K is shown. The task ends and so the memory span is defined when the participant makes three consecutive errors for a given sequence length or when the span is 9 (this also can be changed easily).
 
 The same task is duplicated asking the participant to type the digit sequence in reverse order.
 
@@ -53,7 +53,7 @@ The task shows digit sequences to be recalled in the diplayed order. When the sp
 ## Digits sequences
 
 
-By default, the program allows for digits sequences starting from length 3 up to length 9. The displayed sequences are shown  determined by the `loop and merge`, in the `Digit Span` block (second block). 
+By default, the program allows for digits sequences starting from length 3 up to length 9. The displayed sequences are defined in the `loop and merge`, in the `Digit Span` block (second block). 
 
 `r pic("pics/ds5.png")`
 
